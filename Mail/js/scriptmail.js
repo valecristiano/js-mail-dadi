@@ -25,18 +25,35 @@ const userEmail = prompt("Scrivi qui la tua email");
 console.log("userEmail", userEmail);
 
 //creare un for che controlli se l'email dell'utente è presente o meno nella lista
-let approvation;
+let found = false;
 
 for (let i = 0; i < invitedList.length; i++) {
-  currentEmail = invitedList[i];
+  let currentEmail = invitedList[i];
 
-  if (currentEmail === userEmail) {
-    approvation = "Sei nella lista degli invitati";
-  } else {
-    approvation = "Non sei nella lista degli invitati";
+  if (currentEmail == userEmail) {
+    found = true;
   }
 }
+if (found) {
+  console.log("Sei nella lista degli invitati");
+  alert("Sei nella lista degli invitati");
+} else {
+  console.log("Non sei nella lista degli invitati");
+  alert("Non sei nella lista degli invitati");
+}
+
+// let approvation;
+
+// for (let i = 0; i < invitedList.length; i++) {
+//   currentEmail = invitedList[i];
+
+//   if (currentEmail === userEmail) {
+//     approvation = "Sei nella lista degli invitati";
+//   } else {
+//     approvation = "Non sei nella lista degli invitati";
+//   }
+// }
 
 // creare un otput che stampa (o alert) un messaggio positivo o negativo in base all'esito del controllo
-console.log(approvation);
-const approvAlert = alert(approvation);
+// console.log(approvation);
+// const approvAlert = alert(approvation);
